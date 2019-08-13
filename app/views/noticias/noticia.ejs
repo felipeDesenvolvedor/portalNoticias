@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Portal de notícias</title>
+
+		<!-- JQuery -->
+		<script src="js/jquery-2.2.1.js"></script>
+		<script src="js/ajax.js"></script>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- incluindo css -->
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" />
+	</head>
+
+	<body id="noticia">
+
+		<!-- Topo -->
+		<%- include ../topo.ejs %>
+
+			<% if (noticia.length) { %>
+		    <div class="container">
+		    	<div class="row">
+		    		<div class="col-md-12">
+		    			<div class="noticia_wrapper">
+								<div class="info-noticias">
+				    			<span class="noticia_autor"><%= noticia[0].autor %></span>
+				    			<span class="noticia_titulo"><%= noticia[0].titulo %></span>
+				    			<span class="noticia_data"><%= noticia[0].data_criacao %></span>
+				    			<br />
+				    			<p class="noticia_resumo">
+				    				<%= noticia[0].resumo %>
+				    			</p>
+								</div>
+								<div class="info-alterar">
+										<input type="button" class="info-excluir" value="" onClick="getInformacaoQualquer();"></input>
+										<div class="info-editar"></div>
+								</div>
+			    		</div>
+			    	</div>
+		    	</div>
+		    </div>
+			<% } %>
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	</body>
+</html>
